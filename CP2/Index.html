@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel de Imágenes</title>
+    <link rel="stylesheet" href="CP2.css">
+</head>
+<body>
+    <body>
+
+        <!-- Párrafo superior -->
+        <p>
+          Clase Practica 2  - Johnny Alvarado </p>
+          Bienvenido a nuestra galería interactiva.
+        </p>
+      
+        <div class="carrusel">
+          <div class="imagenes" id="imagenes">
+            <img src="https://www.fcme.com.ec/wp-content/uploads/logo-UBE.png" alt="Imagen 1">
+            <img src="https://www.algotive.ai/hubfs/00%20Blog/08%20Sistemas%20Inteligentes/Usos-de-Sistemas-Inteligentes-en-la-Actualidad1.png" alt="Imagen 2">
+            <img src="https://www.unir.net/wp-content/uploads/sites/22/2022/03/engineer-touch-screen-control-robot-the-production-of-factory-parts-picture-id1041132512.jpg" alt="Imagen 3">
+            <img src="https://ecotec.edu.ec/content/uploads/oferta-academica/grado/carrera-de-mecatronica-en-ecuador.jpg" alt="Imagen 4">
+            <img src="https://www.emagister.com/es/albums/9/2/0/6/2/xxl_cropped_507bfdddcf521053283431229578928a.jpg" alt="Imagen 5">
+            <img src="https://www.dointech.com.co/blog/wp-content/uploads/2015/03/edificio-inteligente.jpg" alt="Imagen 6"> 
+            <img src="https://iccsi.com.ar/wp-content/uploads/cual-es-la-diferencia-entre-inteligencia-artificial-y-sistema-de-inteligencia.webp" alt="Imagen 7">
+            <img src="https://i0.wp.com/ticsyformacion.com/wp-content/uploads/2014/04/infografia_sistemas_inteligentes.jpg?ssl=1" alt="Imagen 8">
+            <img src="https://www.algotive.ai/hs-fs/hubfs/00%20Blog/08%20Sistemas%20Inteligentes/APLICACIONES%20DE%20LOS%20SISTEMAS%20INTELIGENTES-01-1.png?width=800&name=APLICACIONES%20DE%20LOS%20SISTEMAS%20INTELIGENTES-01-1.png" alt="Imagen 8"> 
+          </div>
+      
+          <button class="boton anterior" onclick="moverCarrusel(-1)">❮</button>
+          <button class="boton siguiente" onclick="moverCarrusel(1)">❯</button>
+        </div>
+      
+        <!--Párrafo inferior -->
+        <p>
+          ¡Esperamos que disfrutes del recorrido visual!
+        </p>
+      
+        <script>
+          let indice = 0;
+      
+          function moverCarrusel(direccion) {
+            const carrusel = document.getElementById("imagenes");
+            const total = carrusel.children.length;
+      
+            indice += direccion;
+      
+            if (indice < 0) {
+              indice = total - 1;
+            } else if (indice >= total) {
+              indice = 0;
+            }
+      
+            carrusel.style.transform = `translateX(-${indice * 600}px)`;
+          }
+        </script>
+         
+</body>
+</html>
